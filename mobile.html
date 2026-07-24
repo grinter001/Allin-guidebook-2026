@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All In Golf Trip 2026 — Official Guidebook</title>
-<meta name="theme-color" content="#0f3272">
 <style>
   :root {
     --grint-blue: #1a4fa0;
@@ -220,6 +219,7 @@
     background: white;
     border-radius: var(--card-radius);
     box-shadow: 0 2px 12px rgba(26,79,160,0.08);
+    overflow: hidden;
   }
   .post-header {
     background: var(--grint-blue);
@@ -514,97 +514,103 @@
     margin: 0 auto;
   }
 
-  /* ═══════════════════════════════════════════
-     MOBILE OVERRIDES  (iPhone / small screens)
-     Targeting ≤ 768px — iPhone 15 Pro = 393px
-  ═══════════════════════════════════════════ */
+  /* ════════════════════════════════════════════════════════
+     MOBILE  —  All screen widths ≤ 768 px (iPhone 15 Pro = 393 px)
+     Strategy: body can't scroll horizontally; tables scroll
+               inside their own scroll container (.tbl-scroll)
+  ════════════════════════════════════════════════════════ */
 
-  /* All horizontal-scroll wrappers */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  /* Lock the page — no sideways page drift */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  /* ── Scroll container for every table ── */
+  .tbl-scroll {
     width: 100%;
-    /* DO NOT set overflow on parent — let it propagate */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;    /* momentum on iOS */
+    /* Subtle right-fade to hint "more content →" */
+    background:
+      linear-gradient(to right, white 30%, rgba(255,255,255,0)) center left,
+      linear-gradient(to left,  rgba(26,79,160,0.08) 0%, rgba(255,255,255,0)) center right;
+    background-size: 30px 100%, 30px 100%;
+    background-attachment: local, scroll;
+    background-repeat: no-repeat;
   }
 
   @media (max-width: 768px) {
-    /* ── Body / layout ── */
-    body { font-size: 14px; }
-    .container { padding: 0; }
-    .page-wrap { padding: 0 10px; }
+    /* ── Overall layout ── */
+    .page-wrap  { padding: 0 8px; }
 
     /* ── Cover ── */
-    .cover { min-height: 100svh; }
-    .cover h1 { font-size: 2.8rem; }
-    .cover h2 { font-size: 0.85rem; letter-spacing: 3px; }
-    .cover-loc { font-size: 11px; }
-    .cover-content { padding: 40px 18px 32px; }
-    .cover-stat-num { font-size: 1.4rem; }
+    .cover        { min-height: 100svh; }
+    .cover h1     { font-size: 2.6rem; }
+    .cover h2     { font-size: 0.82rem; letter-spacing: 3px; }
+    .cover-loc    { font-size: 11px; }
+    .cover-content { padding: 40px 16px 28px; }
+    .cover-stat-num   { font-size: 1.35rem; }
     .cover-stat-label { font-size: 8px; }
     .cover-divider-text { font-size: 8px; }
 
     /* ── TOC ── */
-    .toc { margin: 20px auto; padding: 16px; }
-    .toc-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-    .toc-item { font-size: 11px; padding: 8px 10px; }
+    .toc       { margin: 16px auto; padding: 14px; }
+    .toc-grid  { grid-template-columns: 1fr 1fr; gap: 5px; }
+    .toc-item  { font-size: 11px; padding: 7px 9px; }
 
     /* ── Section labels ── */
-    .section-label { margin: 24px auto 0; }
+    .section-label   { margin: 22px auto 0; }
     .section-label h2 { font-size: 9px; }
 
-    /* ── Cards: CRITICAL — must be visible so child scroll works ── */
-    .post-card { padding: 0 8px; margin-bottom: 16px; }
-    .post-inner {
-      overflow: visible !important;   /* override any base overflow:hidden */
-      border-radius: 10px;
-    }
-    .post-header {
-      border-radius: 10px 10px 0 0;  /* re-apply since post-inner won't clip */
-      padding: 11px 14px;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .post-header h3 { font-size: 0.95rem; }
+    /* ── Cards ── */
+    .post-card   { padding: 0 6px; margin-bottom: 14px; }
+    .post-inner  { overflow: hidden; border-radius: 10px; }   /* card clips; tables scroll inside */
+    .post-header { border-radius: 10px 10px 0 0; padding: 11px 13px; flex-wrap: wrap; gap: 5px; }
+    .post-header h3 { font-size: 0.92rem; }
     .post-number { font-size: 8px; }
-    .post-tag { font-size: 8px; }
+    .post-tag    { font-size: 8px; }
 
     /* ── Post body: single column ── */
     .post-body { grid-template-columns: 1fr; }
     .photos-section { border-right: none; border-bottom: 1px solid #edf0f8; padding: 12px; }
     .caption-section { padding: 12px; }
-
-    /* ── Caption box: allow inner scroll ── */
     .caption-box {
-      padding: 12px;
+      padding: 10px;
       font-size: 13px;
-      /* overflow-x purposely NOT set here — let .table-wrap handle it */
-      overflow-x: visible;
+      overflow: visible;         /* let .tbl-scroll handle table overflow */
       word-break: break-word;
-      overflow-wrap: break-word;
     }
 
-    /* ── Tables: min-width forces horizontal scroll via .table-wrap ── */
-    .sched-table  { min-width: 560px; font-size: 11px; }
-    .rounds-table { min-width: 420px; font-size: 11px; }
-    .sched-table th, .rounds-table th { font-size: 8.5px; padding: 6px 8px; }
-    .sched-table td, .rounds-table td { padding: 7px 8px; }
+    /* ── Schedule table ── */
+    .sched-table { min-width: 540px; font-size: 11px; }
+    .sched-table th { font-size: 8px; padding: 5px 8px; }
+    .sched-table td { padding: 6px 8px; }
+    .sched-sub { font-size: 10px; }
 
-    /* Doon Brae inline table */
-    .caption-box table { min-width: 360px; font-size: 11px; }
+    /* ── Rounds table ── */
+    .rounds-table { min-width: 400px; font-size: 11px; }
+    .rounds-table th { font-size: 8px; padding: 5px 8px; }
+    .rounds-table td { padding: 6px 8px; }
+
+    /* ── Doon Brae inline table ── */
+    .caption-box table { min-width: 320px; font-size: 11px; }
+    .caption-box table th, .caption-box table td { padding: 5px 8px; }
 
     /* ── Team / leg grids: stack ── */
     .teams-grid { grid-template-columns: 1fr; }
     .legs-grid  { grid-template-columns: 1fr; }
 
-    /* ── Misc ── */
-    .total-bar { font-size: 12px; padding: 8px 12px; }
-    .info-bar  { font-size: 12px; padding: 8px 12px; }
-    .rule-text { font-size: 12px; }
-    .rule-sub  { font-size: 11px; }
+    /* ── Misc text ── */
+    .total-bar  { font-size: 12px; padding: 8px 11px; }
+    .info-bar   { font-size: 12px; padding: 8px 11px; }
+    .rule-text  { font-size: 12px; }
+    .rule-sub   { font-size: 11px; }
     .rules-list { gap: 10px; }
-    .photo-grid { gap: 6px; }
-    .photo-grid.three { grid-template-columns: 1fr 1fr 1fr; }
-    footer { padding: 26px 14px; font-size: 11px; }
+
+    /* ── Photos ── */
+    .photo-grid     { gap: 5px; }
+    .photo-caption  { font-size: 10px; }
+
+    /* ── Footer ── */
+    footer { padding: 24px 14px; font-size: 11px; }
   }
 
 </style>
@@ -688,7 +694,7 @@
     <div class="post-body full">
       <div class="caption-section">
         <div class="caption-box no-pre">
-          <div class="table-wrap"><table class="sched-table">
+          <div class="tbl-scroll"><table class="sched-table">
             <thead>
               <tr>
                 <th style="width:130px;">Accommodations</th>
@@ -861,7 +867,7 @@
         <div class="caption-box no-pre">
           Before the first tee shot — here's everything you need to know. 📋
 
-          <div class="table-wrap"><table class="rounds-table" style="margin-top:16px;">
+          <div class="tbl-scroll"><table class="rounds-table" style="margin-top:16px;">
             <thead>
               <tr>
                 <th>Session</th>
@@ -1058,7 +1064,7 @@ Twelve players are coming for it in August. Only one goes home with it. 🏔️<
             </div>
           </div>
 
-          <div class="table-wrap"><table class="rounds-table" style="margin-top:14px;">
+          <div class="tbl-scroll"><table class="rounds-table" style="margin-top:14px;">
             <thead>
               <tr>
                 <th>Finish</th>
@@ -1259,7 +1265,7 @@ Handle your business. 🤝</div>
 
           <p style="font-family:'Arial',sans-serif;font-size:13px;line-height:1.75;margin-bottom:10px;">Doon Brae Short Course at The Highlands — Harbor Springs, Michigan. Nine par-3 holes designed by Raymond Hearn, set along the hillside that doubles as a ski slope in winter. <em>Doon</em> means going down into a valley; <em>Brae</em> means hillside in Scotland — an apt name for a course routed along the slope.</p>
 
-          <div class="table-wrap"><table style="width:100%;font-family:'Arial',sans-serif;font-size:11.5px;border-collapse:collapse;margin-bottom:12px;">
+          <div class="tbl-scroll"><table style="width:100%;font-family:'Arial',sans-serif;font-size:11.5px;border-collapse:collapse;margin-bottom:12px;">
             <thead>
               <tr style="background:var(--grint-blue-light);">
                 <th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--grint-blue-dark);">Hole</th>
