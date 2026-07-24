@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All In Golf Trip 2026 — Official Guidebook</title>
+<meta name="theme-color" content="#0f3272">
+<style>
+  :root {
+    --grint-blue: #1a4fa0;
+    --grint-blue-dark: #0f3272;
+    --grint-blue-light: #e8eef8;
+    --gold: #c9a84c;
+    --text: #1a1a2e;
+    --gray: #666;
+    --light: #f5f7fc;
+    --card-radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--light);
+    color: var(--text);
+  }
+
+  /* COVER */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    text-align: center;
+  }
+  .cover-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,30,80,0.10) 0%,
+      rgba(10,30,80,0.45) 40%,
+      rgba(10,30,80,0.88) 70%,
+      rgba(10,30,80,0.97) 100%
+    );
+  }
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    padding: 48px 24px 40px;
+    width: 100%;
+  }
+  .cover-eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    letter-spacing: 3px;
+    line-height: 1.05;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .cover h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .cover-loc {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.72;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .cover-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .cover-divider-line {
+    height: 1px;
+    width: 50px;
+    background: rgba(201,168,76,0.55);
+  }
+  .cover-divider-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+  .cover-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 22px;
+    flex-wrap: wrap;
+  }
+  .cover-stat {
+    padding: 0 28px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .cover-stat:last-child { border-right: none; }
+  .cover-stat-num {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .cover-stat-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .cover-source {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-family: 'Arial', sans-serif;
+    font-size: 9px;
+    opacity: 0.35;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  /* keep legacy stats class used nowhere else */
+  .kit-header .stats { display:none; }
+
+  /* TOC */
+  .toc {
+    max-width: 860px;
+    margin: 36px auto;
+    padding: 0 20px;
+  }
+  .toc h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    background: white;
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: var(--grint-blue);
+    text-decoration: none;
+    transition: background 0.2s;
+    display: block;
+  }
+  .toc-item:hover { background: var(--grint-blue-light); }
+  .toc-item span { opacity: 0.5; margin-right: 6px; }
+
+  /* SECTION DIVIDER */
+  .section-label {
+    max-width: 860px;
+    margin: 44px auto 0;
+    padding: 0 20px;
+  }
+  .section-label h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grint-blue);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--grint-blue);
+    margin-bottom: 20px;
+  }
+
+  /* POST CARD */
+  .post-card {
+    max-width: 860px;
+    margin: 0 auto 28px;
+    padding: 0 20px;
+  }
+  .post-inner {
+    background: white;
+    border-radius: var(--card-radius);
+    box-shadow: 0 2px 12px rgba(26,79,160,0.08);
+  }
+  .post-header {
+    background: var(--grint-blue);
+    color: white;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .post-number {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .post-tag {
+    background: rgba(255,255,255,0.2);
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .post-header h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 4px;
+  }
+  .post-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  @media (max-width: 640px) {
+    .post-body { grid-template-columns: 1fr; }
+  }
+
+  /* PHOTOS */
+  .photos-section {
+    padding: 20px;
+    border-right: 1px solid #edf0f8;
+  }
+  .photos-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .photo-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+  .photo-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #e0e7f0;
+  }
+  .photo-item.wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 16/7;
+  }
+  .photo-item.tall {
+    aspect-ratio: 3/4;
+  }
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-caption {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    color: var(--gray);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* CAPTION */
+  .caption-section {
+    padding: 20px;
+  }
+  .caption-box {
+    background: var(--light);
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13.5px;
+    line-height: 1.75;
+    white-space: pre-line;
+    color: var(--text);
+  }
+  .caption-box.no-pre {
+    white-space: normal;
+  }
+
+  /* FULL-WIDTH CARDS */
+  .post-body.full {
+    grid-template-columns: 1fr;
+  }
+
+  /* SCHEDULE TABLE inside caption-box */
+  .sched-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 12.5px;
+    white-space: normal;
+  }
+  .sched-table th {
+    background: var(--grint-blue-light);
+    color: var(--grint-blue-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 12px;
+    text-align: left;
+  }
+  .sched-table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid #c4cfe8;
+    vertical-align: middle;
+  }
+  .sched-table tr:last-child td { border-bottom: none; }
+  .sched-table tr:hover td { background: #fafbff; }
+  .sched-date { font-weight: 700; color: var(--grint-blue-dark); white-space: nowrap; }
+  .sched-time { font-weight: 700; color: var(--grint-blue); text-align: right; white-space: nowrap; }
+  .sched-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+  .sched-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .sched-badge.ryder    { background: #dde9ff; color: var(--grint-blue); }
+  .sched-badge.barracas { background: #e8f5e9; color: #2e7d32; }
+  .sched-badge.polla    { background: #f5e9cc; color: #7a5a00; }
+  .sched-badge.travel   { background: #f3e5f5; color: #6a1b9a; }
+  .sched-badge.special  { background: #fce4ec; color: #880e4f; }
+
+  /* TEAMS inside caption-box */
+  .teams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    white-space: normal;
+  }
+  .team-col {
+    background: white;
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .team-col.cap { border-top: 3px solid var(--grint-blue); }
+  .team-col.cup { border-top: 3px solid #c0392b; }
+  .team-col .t-name { font-family: 'Arial', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+  .team-col.cap .t-name { color: var(--grint-blue); }
+  .team-col.cup .t-name { color: #c0392b; }
+  .team-col .t-role { font-family: 'Arial', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
+  .team-col .t-players { font-family: 'Arial', sans-serif; font-size: 12.5px; line-height: 1.9; }
+
+  /* ROUNDS TABLE inside caption-box */
+  .rounds-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 12.5px;
+    white-space: normal;
+    margin-top: 14px;
+  }
+  .rounds-table th {
+    background: var(--grint-blue-light);
+    color: var(--grint-blue-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  .rounds-table td { padding: 9px 10px; border-bottom: 1px solid #edf0f8; vertical-align: top; }
+  .rounds-table tr:last-child td { border-bottom: none; }
+  .rounds-table tr:hover td { background: #fafbff; }
+  .r-num { font-weight: 700; color: var(--grint-blue); white-space: nowrap; }
+  .r-pts { font-weight: 700; color: var(--gray); text-align: right; }
+  .total-bar {
+    background: var(--grint-blue-dark);
+    color: white;
+    border-radius: 8px;
+    padding: 11px 14px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    margin-top: 12px;
+    white-space: normal;
+  }
+
+  /* RULES inside caption-box */
+  .rules-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+    white-space: normal;
+  }
+  .rule-item { display: flex; gap: 12px; align-items: flex-start; }
+  .rule-num {
+    background: var(--grint-blue);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .rule-text { font-family: 'Arial', sans-serif; font-size: 12.5px; line-height: 1.7; }
+  .rule-sub {
+    margin-top: 5px;
+    padding-left: 12px;
+    border-left: 2px solid #dde3f0;
+    font-size: 11.5px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* BARRACAS LEGS inside caption-box */
+  .legs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+    white-space: normal;
+  }
+  .leg-col {
+    background: white;
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    border-top: 3px solid var(--grint-blue);
+    padding: 12px 14px;
+  }
+  .leg-col .l-title { font-family: 'Arial', sans-serif; font-weight: 700; font-size: 12.5px; color: var(--grint-blue-dark); margin-bottom: 2px; }
+  .leg-col .l-sub { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+  .leg-col .l-desc { font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.65; }
+  .info-bar {
+    background: #f5e9cc;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.65;
+    margin-top: 10px;
+    white-space: normal;
+  }
+  .info-bar.red { background: #fff0f0; border-color: #c0392b; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: var(--gray);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE OVERRIDES  (iPhone / small screens)
+     Targeting ≤ 768px — iPhone 15 Pro = 393px
+  ═══════════════════════════════════════════ */
+
+  /* All horizontal-scroll wrappers */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    /* DO NOT set overflow on parent — let it propagate */
+  }
+
+  @media (max-width: 768px) {
+    /* ── Body / layout ── */
+    body { font-size: 14px; }
+    .container { padding: 0; }
+    .page-wrap { padding: 0 10px; }
+
+    /* ── Cover ── */
+    .cover { min-height: 100svh; }
+    .cover h1 { font-size: 2.8rem; }
+    .cover h2 { font-size: 0.85rem; letter-spacing: 3px; }
+    .cover-loc { font-size: 11px; }
+    .cover-content { padding: 40px 18px 32px; }
+    .cover-stat-num { font-size: 1.4rem; }
+    .cover-stat-label { font-size: 8px; }
+    .cover-divider-text { font-size: 8px; }
+
+    /* ── TOC ── */
+    .toc { margin: 20px auto; padding: 16px; }
+    .toc-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .toc-item { font-size: 11px; padding: 8px 10px; }
+
+    /* ── Section labels ── */
+    .section-label { margin: 24px auto 0; }
+    .section-label h2 { font-size: 9px; }
+
+    /* ── Cards: CRITICAL — must be visible so child scroll works ── */
+    .post-card { padding: 0 8px; margin-bottom: 16px; }
+    .post-inner {
+      overflow: visible !important;   /* override any base overflow:hidden */
+      border-radius: 10px;
+    }
+    .post-header {
+      border-radius: 10px 10px 0 0;  /* re-apply since post-inner won't clip */
+      padding: 11px 14px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .post-header h3 { font-size: 0.95rem; }
+    .post-number { font-size: 8px; }
+    .post-tag { font-size: 8px; }
+
+    /* ── Post body: single column ── */
+    .post-body { grid-template-columns: 1fr; }
+    .photos-section { border-right: none; border-bottom: 1px solid #edf0f8; padding: 12px; }
+    .caption-section { padding: 12px; }
+
+    /* ── Caption box: allow inner scroll ── */
+    .caption-box {
+      padding: 12px;
+      font-size: 13px;
+      /* overflow-x purposely NOT set here — let .table-wrap handle it */
+      overflow-x: visible;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* ── Tables: min-width forces horizontal scroll via .table-wrap ── */
+    .sched-table  { min-width: 560px; font-size: 11px; }
+    .rounds-table { min-width: 420px; font-size: 11px; }
+    .sched-table th, .rounds-table th { font-size: 8.5px; padding: 6px 8px; }
+    .sched-table td, .rounds-table td { padding: 7px 8px; }
+
+    /* Doon Brae inline table */
+    .caption-box table { min-width: 360px; font-size: 11px; }
+
+    /* ── Team / leg grids: stack ── */
+    .teams-grid { grid-template-columns: 1fr; }
+    .legs-grid  { grid-template-columns: 1fr; }
+
+    /* ── Misc ── */
+    .total-bar { font-size: 12px; padding: 8px 12px; }
+    .info-bar  { font-size: 12px; padding: 8px 12px; }
+    .rule-text { font-size: 12px; }
+    .rule-sub  { font-size: 11px; }
+    .rules-list { gap: 10px; }
+    .photo-grid { gap: 6px; }
+    .photo-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    footer { padding: 26px 14px; font-size: 11px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <img class="cover-photo"
+       src="cover.jpg"
+       alt="Arcadia Bluffs"
+       onerror="this.style.display='none'">
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Official Trip Guidebook</div>
+    <h1>All In</h1>
+    <h2>Golf Trip · 2026</h2>
+    <div class="cover-loc">Northern Michigan · August 7 – 13</div>
+    <div class="cover-divider">
+      <div class="cover-divider-line"></div>
+      <div class="cover-divider-text">Arcadia Bluffs · Hole 14 · Lake Michigan</div>
+      <div class="cover-divider-line"></div>
+    </div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-num">12</span>
+        <span class="cover-stat-label">Players</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-num">9</span>
+        <span class="cover-stat-label">Rounds</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-num">8</span>
+        <span class="cover-stat-label">Courses</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-num">4</span>
+        <span class="cover-stat-label">Competitions</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-source">Arcadia Bluffs · The Bluffs Course</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Contents</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#schedule"><span>01</span>Full Schedule</a>
+    <a class="toc-item" href="#rydercup"><span>02</span>The Ryder Cup</a>
+    <a class="toc-item" href="#rules"><span>03</span>Rules & Agreements</a>
+    <a class="toc-item" href="#prizes"><span>04</span>The Prizes</a>
+    <a class="toc-item" href="#barracas"><span>05</span>The Barracas Cup</a>
+    <a class="toc-item" href="#pollas"><span>06</span>The Pollas</a>
+    <a class="toc-item" href="#belvedere"><span>07</span>Belvedere Golf Club</a>
+    <a class="toc-item" href="#bayharbor"><span>08</span>Bay Harbor Golf Club</a>
+    <a class="toc-item" href="#arthurhills"><span>09</span>Arthur Hills</a>
+    <a class="toc-item" href="#doonbrae"><span>10</span>Doon Brae</a>
+    <a class="toc-item" href="#heather"><span>11</span>The Heather</a>
+    <a class="toc-item" href="#arcadiasouth"><span>12</span>Arcadia South</a>
+    <a class="toc-item" href="#arcadiabluffs"><span>13</span>Arcadia Bluffs</a>
+  </div>
+</div>
+
+
+<!-- ===================== SECTION 01: SCHEDULE ===================== -->
+<div class="section-label">
+  <h2>Section 01 — Full Schedule</h2>
+</div>
+
+<div class="post-card" id="schedule">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Schedule</div>
+        <h3>All In Golf Trip 2026 — Full Itinerary</h3>
+      </div>
+      <div class="post-tag">August 7–13</div>
+    </div>
+    <div class="post-body full">
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          <div class="table-wrap"><table class="sched-table">
+            <thead>
+              <tr>
+                <th style="width:130px;">Accommodations</th>
+                <th style="width:105px;">Date</th>
+                <th style="width:62px;">Time</th>
+                <th>Course / Activity</th>
+                <th style="width:175px;">Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aug 7 -->
+              <tr>
+                <td rowspan="6" style="background:#eef3fc;text-align:center;vertical-align:middle;border-right:2px solid #dde3f0;padding:14px 10px;">
+                  🏨<br><strong style="font-size:11.5px;">Boyne Resort</strong><br><span style="font-size:10px;color:var(--gray);">Boyne City, MI</span>
+                </td>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Fri Aug 7</span><div class="sched-sub">Arrival Day</div></td>
+                <td class="sched-time">12:30pm</td>
+                <td>✈️ Fly In · Arrivals<br><span class="sched-badge travel">Travel</span></td>
+                <td style="font-size:12px;color:var(--gray);">Settle in, get ready</td>
+              </tr>
+              <tr>
+                <td class="sched-time">3:40pm</td>
+                <td>Belvedere Golf Club<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>Best Ball</td>
+              </tr>
+              <!-- Aug 8 -->
+              <tr>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Sat Aug 8</span><div class="sched-sub">27 Holes</div></td>
+                <td class="sched-time">2:20pm</td>
+                <td>Bay Harbor Golf Club — Links/Quarry<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>High &amp; Low (18 holes)</td>
+              </tr>
+              <tr>
+                <td class="sched-time">After</td>
+                <td>Bay Harbor — Preserve<br><span class="sched-badge barracas">Barracas Cup</span></td>
+                <td>Barracas Cup Leg 1 · Individual Net Stroke Play</td>
+              </tr>
+              <!-- Aug 9 -->
+              <tr>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Sun Aug 9</span></td>
+                <td class="sched-time">8:30am</td>
+                <td>Arthur Hills at The Highlands<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>Individual Match Play</td>
+              </tr>
+              <tr>
+                <td class="sched-time">6:00pm</td>
+                <td>Doon Brae Short Course at The Highlands<br><span class="sched-badge barracas">Barracas Cup</span></td>
+                <td>Barracas Cup Leg 2 · Best Ball Net by pairs</td>
+              </tr>
+              <!-- Aug 10 -->
+              <tr>
+                <td style="background:#fff8e1;text-align:center;vertical-align:middle;border-right:2px solid #dde3f0;padding:14px 10px;">
+                  🏠<br><strong style="font-size:11.5px;">Airbnb</strong><br><span style="font-size:10px;color:#8d6e63;">Arcadia, MI</span>
+                </td>
+                <td style="vertical-align:middle;"><span class="sched-date">Mon Aug 10</span></td>
+                <td class="sched-time">9:00am</td>
+                <td>The Heather at The Highlands<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>Best Ball</td>
+              </tr>
+              <!-- Aug 11 + Aug 12 -->
+              <tr>
+                <td rowspan="4" style="background:#e8f5e9;text-align:center;vertical-align:middle;border-right:2px solid #dde3f0;padding:14px 10px;">
+                  ⛳<br><strong style="font-size:11.5px;">Arcadia Bluffs Lodge</strong><br><span style="font-size:10px;color:#388e3c;">Arcadia, MI</span>
+                </td>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Tue Aug 11</span></td>
+                <td class="sched-time">7:47am</td>
+                <td>Arcadia Bluffs — South Course<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>Scramble</td>
+              </tr>
+              <tr>
+                <td class="sched-time">3:50pm</td>
+                <td>Arcadia Bluffs — The Bluffs Course<br><span class="sched-badge polla">Polla</span></td>
+                <td>Polla</td>
+              </tr>
+              <tr>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Wed Aug 12</span></td>
+                <td class="sched-time">8:50am</td>
+                <td>Arcadia Bluffs — The Bluffs Course<br><span class="sched-badge ryder">Ryder Cup</span></td>
+                <td>Individuals — Finals</td>
+              </tr>
+              <tr>
+                <td class="sched-time">6:15pm</td>
+                <td>🏆 Champions Dinner<br><span class="sched-badge special">Ceremony</span></td>
+                <td>Belt ceremony · MVP vote · Celebrations</td>
+              </tr>
+              <!-- Aug 13 -->
+              <tr>
+                <td rowspan="2" style="background:var(--light);text-align:center;vertical-align:middle;border-right:2px solid #dde3f0;padding:14px 10px;color:var(--gray);">
+                  ✈️<br><span style="font-size:10px;font-weight:600;">Departure Day</span>
+                </td>
+                <td rowspan="2" style="vertical-align:middle;"><span class="sched-date">Thu Aug 13</span><div class="sched-sub">Final Day</div></td>
+                <td class="sched-time">7:58am</td>
+                <td>Arcadia South Course<br><span class="sched-badge polla">Polla</span></td>
+                <td>Polla Long</td>
+              </tr>
+              <tr>
+                <td class="sched-time">~2:00pm</td>
+                <td>✈️ Depart for Airport<br><span class="sched-badge travel">Travel</span></td>
+                <td>Check out · Head home</td>
+              </tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== SECTION 02: COMPETITIONS ===================== -->
+<div class="section-label">
+  <h2>Section 02 — Competitions</h2>
+</div>
+
+<!-- THE RYDER CUP -->
+<div class="post-card" id="rydercup">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Competition · Team</div>
+        <h3>The All In Ryder Cup</h3>
+      </div>
+      <div class="post-tag">Two Teams · Six Sessions</div>
+    </div>
+    <div class="post-body full">
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          Two teams. Six sessions. One Belt. 🏆
+
+          <div class="teams-grid" style="margin-top:14px;">
+            <div class="team-col cap">
+              <div class="t-name">🔵 Team CAP</div>
+              <div class="t-role">Home · Defending Champions</div>
+              <div class="t-players">
+                Caco <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;background:#dde9ff;color:var(--grint-blue);padding:1px 7px;border-radius:8px;vertical-align:middle;">Captain</span><br>
+                Negro <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;background:#e8eef8;color:var(--grint-blue-dark);padding:1px 7px;border-radius:8px;vertical-align:middle;">Co-Captain</span><br>
+                Armando · Henry · Kevin · Frank
+              </div>
+            </div>
+            <div class="team-col cup">
+              <div class="t-name">🔴 Team CUP</div>
+              <div class="t-role">Away · Challengers</div>
+              <div class="t-players">
+                JT <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;background:#fde8e8;color:#c0392b;padding:1px 7px;border-radius:8px;vertical-align:middle;">Captain</span><br>
+                Chapu <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;background:#fef0f0;color:#c0392b;padding:1px 7px;border-radius:8px;vertical-align:middle;">Co-Captain</span><br>
+                Raul · Balbi · Aguilar · Chino
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RULES & AGREEMENTS -->
+<div class="post-card" id="rules">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Competition · Rules</div>
+        <h3>Ryder Cup — Formats, Courses & Captains' Agreements</h3>
+      </div>
+      <div class="post-tag">The Full Breakdown</div>
+    </div>
+    <div class="post-body full">
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          Before the first tee shot — here's everything you need to know. 📋
+
+          <div class="table-wrap"><table class="rounds-table" style="margin-top:16px;">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Course</th>
+                <th>Format</th>
+                <th>Course Details</th>
+                <th style="text-align:right;">Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="r-num">Session 1</td><td>Belvedere</td><td>Best Ball (pairs)</td><td style="font-size:11.5px;color:var(--gray);">Par 72 · 6,601 yds · Rating 72.2 · Slope 129</td><td class="r-pts">3</td></tr>
+              <tr><td class="r-num">Session 2</td><td>Bay Harbor Links/Quarry</td><td>High &amp; Low (pairs)</td><td style="font-size:11.5px;color:var(--gray);">Par 72 · 6,228 yds · Rating 70.9 · Slope 142</td><td class="r-pts">3</td></tr>
+              <tr><td class="r-num">Session 3</td><td>Arthur Hills</td><td>Individuals (singles)</td><td style="font-size:11.5px;color:var(--gray);">Par 73 · 6,352 yds · Rating 70.3 · Slope 131</td><td class="r-pts">6</td></tr>
+              <tr><td class="r-num">Session 4</td><td>The Heather</td><td>Best Ball (pairs)</td><td style="font-size:11.5px;color:var(--gray);">Par 72 · 6,207 yds · Rating 70.3 · Slope 139</td><td class="r-pts">3</td></tr>
+              <tr><td class="r-num">Session 5</td><td>Arcadia South</td><td>Scramble (pairs)</td><td style="font-size:11.5px;color:var(--gray);">Par 72 · 6,380 yds · Rating 71.3 · Slope 131</td><td class="r-pts">3</td></tr>
+              <tr><td class="r-num">Session 6</td><td>Arcadia Bluffs</td><td>Individuals — Finals</td><td style="font-size:11.5px;color:var(--gray);">Par 72 · 6,389 yds · Rating 71.7 · Slope 145</td><td class="r-pts">6</td></tr>
+            </tbody>
+          </table></div>
+          <div class="total-bar" style="margin-top:12px;"><strong>24 points available</strong> · 12.5 wins the Cup · A draw stays with Team CAP</div>
+
+          <div style="font-family:'Arial',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--grint-blue);padding-bottom:6px;border-bottom:1px solid #dde3f0;margin:20px 0 14px;">Captain's Agreements</div>
+
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-num">1</span>
+              <div class="rule-text">
+                <strong>The Coin Toss</strong> — Flipped in Miami on August 5th. The winner chooses the advantage in <em>odd</em> or <em>even</em> sessions.
+                <div class="rule-sub">Odd = Sessions 1 (Best Ball) · 3 (Individuals) · 5 (Scramble)<br>Even = Sessions 2 (High & Low) · 4 (Best Ball) · 6 (Individuals)</div>
+              </div>
+            </li>
+            <li class="rule-item">
+              <span class="rule-num">2</span>
+              <div class="rule-text">
+                <strong>Picking Order</strong> — Before each session, both Captains and their teams meet to agree on who faces who in that session.
+                <div class="rule-sub">
+                  <strong>Pair sessions</strong> — The team with the advantage seeds their pair (two players) first. The opposing team responds with their two players. The opposing team then seeds their next pair, and the team with the advantage responds. Order: <strong>AA / BB / BB / AA / AA / BB</strong>.<br><br>
+                  <strong>Individual sessions</strong> — The team <em>without</em> the advantage seeds their player first, then the other team responds, alternating throughout: <strong>B / A / B / A / B / A / B / A / B / A / B / A</strong>.<br><br>
+                  <strong>Pair constraint</strong> — Teams cannot pair the same two players together in two consecutive pair sessions. (e.g., if Caco &amp; Negro played together in Session 2, they cannot be paired again in Session 5.)<br><br>
+                  <strong>Individual constraint</strong> — A specific head-to-head matchup cannot repeat between Session 3 and Session 6. (e.g., if Henry faced JT in Session 3, that match cannot happen again in Session 6.)
+                </div>
+              </div>
+            </li>
+            <li class="rule-item">
+              <span class="rule-num">3</span>
+              <div class="rule-text">
+                <strong>Picking Order Advantage</strong>
+                <div class="rule-sub">Pair sessions: team that tees off first holds the advantage.<br>Individual sessions: team that responds holds the advantage.</div>
+              </div>
+            </li>
+            <li class="rule-item">
+              <span class="rule-num">4</span>
+              <div class="rule-text"><strong>Tee Boxes</strong> — Fixed for all Ryder Cup rounds. No flexibility. Polla rounds are exempt.</div>
+            </li>
+            <li class="rule-item">
+              <span class="rule-num">5</span>
+              <div class="rule-text"><strong>No Tiebreakers</strong> — In the event of a 12–12 draw, the Cup stays with Team CAP, the defending champions.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE PRIZES -->
+<div class="post-card" id="prizes">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Competition · Prizes</div>
+        <h3>The Hardware</h3>
+      </div>
+      <div class="post-tag">The Belt · The MVP Ring</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">🏆 The Championship Belt</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="IMG_1001.jpg" alt="Championship Belt" onerror="this.style.background='#c9a84c'">
+          </div>
+          <div class="photo-item">
+            <img src="IMG_1002.jpg" alt="Championship Belt detail" onerror="this.style.background='#c9a84c'">
+          </div>
+        </div>
+        <div class="photos-label" style="margin-top:14px;">💍 The MVP Ring</div>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="IMG_1003.jpg" alt="MVP Ring front" onerror="this.style.background='#c9a84c'">
+          </div>
+          <div class="photo-item">
+            <img src="IMG_1004.jpg" alt="MVP Ring side" onerror="this.style.background='#c9a84c'">
+          </div>
+        </div>
+        <div class="photo-caption">IMG_1001–1002 · Championship Belt · IMG_1003–1004 · MVP Ring</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">🏆 <strong>The Championship Belt</strong>
+
+The winning team lifts the CAP v CUP Belt at the end of Round 6 on the Bluffs Course. It belongs to the team — shared by all six players who earned it across six sessions. Team CAP are the defending champions. Team CUP came to take it home.
+
+─────────────────────────
+
+💍 <strong>The MVP Ring</strong>
+
+The Cup goes to a team. This goes to one.
+
+Gold. Diamonds. "Most Valuable Player" on the face. This is not a participation award.
+
+After 9 rounds across 8 courses, the group votes for the one player who rose above the rest — the best partner, the clutch performer, the one who made the difference.
+
+Henry earned it last time. He's wearing it right now.
+
+Twelve players are coming for it in August. Only one goes home with it. 🏔️</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE BARRACAS CUP -->
+<div class="post-card" id="barracas">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Competition · Individual</div>
+        <h3>The Barracas Cup</h3>
+      </div>
+      <div class="post-tag">Individual Challenge</div>
+    </div>
+    <div class="post-body full">
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          Before the Cup is decided — the beds are on the line. 🛏️
+
+          <p style="margin-top:12px;font-size:13.5px;line-height:1.75;">An individual challenge played across two legs, two different courses, two different formats. This is every man for himself.</p>
+
+          <div class="legs-grid">
+            <div class="leg-col">
+              <div class="l-title">Leg 1 — Bay Harbor Preserve</div>
+              <div class="l-sub">Individual Net Stroke Play · 9 holes</div>
+              <div class="l-desc">Your net score here sets the standings and determines the pairings for Leg 2.</div>
+            </div>
+            <div class="leg-col">
+              <div class="l-title">Leg 2 — Doon Brae Short Course</div>
+              <div class="l-sub">Best Ball Net by pairs · 9 par-3s</div>
+              <div class="l-desc">Nine par-3s on ski slopes. Dramatic lies. No trees to hide behind.</div>
+            </div>
+          </div>
+
+          <div class="info-bar">
+            <strong>Pairing Draw (after Leg 1)</strong><br>
+            1st + 12th · 2nd + 11th · 3rd + 10th · 4th + 9th · 5th + 8th · 6th + 7th
+          </div>
+          <div class="info-bar red">
+            <strong>The Stakes 🛏️</strong><br>
+            The winning pair picks their rooms at the Airbnb first. The losers sleep in the Barracas beds.
+          </div>
+          <div class="info-bar" style="background:#f0f4ff;border-color:var(--grint-blue);">
+            <strong>Tiebreaker — Putting Course</strong><br>
+            If any pairs finish Leg 2 tied, the tie is resolved on the Putting Course. Tied pairs face each other in <strong>Gross Score Putting</strong> — best ball, hole by hole, sudden death — until a winner is decided.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- THE POLLAS -->
+<div class="post-card" id="pollas">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Competition · Individual</div>
+        <h3>The Pollas</h3>
+      </div>
+      <div class="post-tag">$20 Buy-In · $240 Pot</div>
+    </div>
+    <div class="post-body full">
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          Two rounds. Individual net stroke play. Every man for himself — and $160 on the line. 🏌️
+
+          <div class="legs-grid" style="margin-top:14px;">
+            <div class="leg-col">
+              <div class="l-title">Polla 1 — The Bluffs Course</div>
+              <div class="l-sub">Tue Aug 11 · 3:50pm Tee Time</div>
+              <div class="l-desc">18 holes on the Bluffs Course at Arcadia Bluffs. Played immediately after the Ryder Cup Scramble at the South Course. Individual net stroke play.</div>
+            </div>
+            <div class="leg-col">
+              <div class="l-title">Polla 2 — South Course</div>
+              <div class="l-sub">Thu Aug 13 · 7:58am Tee Time</div>
+              <div class="l-desc">18 holes at the Arcadia South Course. The last competitive round of the trip — final chance to settle scores before the flight home.</div>
+            </div>
+          </div>
+
+          <div class="table-wrap"><table class="rounds-table" style="margin-top:14px;">
+            <thead>
+              <tr>
+                <th>Finish</th>
+                <th>Prize</th>
+                <th style="text-align:right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="r-num">🥇 1st Place</td>
+                <td>Winner Takes Most</td>
+                <td class="r-pts" style="color:#c9a84c;">$160</td>
+              </tr>
+              <tr>
+                <td class="r-num">🥈 2nd Place</td>
+                <td>Runner-Up</td>
+                <td class="r-pts">$40</td>
+              </tr>
+              <tr>
+                <td class="r-num">🥉 3rd Place</td>
+                <td>Show Money</td>
+                <td class="r-pts">$20</td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <div class="info-bar" style="margin-top:12px;">
+            <strong>Buy-In:</strong> $20 per player · <strong>Prize Pot:</strong> $240 (12 players) · Paid out per Polla — same structure for both rounds.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== SECTION 03: VENUES ===================== -->
+<div class="section-label">
+  <h2>Section 03 — The Venues</h2>
+</div>
+
+<!-- BELVEDERE -->
+<div class="post-card" id="belvedere">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 01 · August 7</div>
+        <h3>Belvedere Golf Club</h3>
+      </div>
+      <div class="post-tag">Ryder Cup — Best Ball</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://golf.com/wp-content/uploads/2022/01/belvedere-16th.jpg" alt="Belvedere 16th hole" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://golf.com/wp-content/uploads/2022/01/belvedere-15th.jpg" alt="Belvedere 15th hole" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://golf.com/wp-content/uploads/2022/01/belvedere-9th.jpg" alt="Belvedere 9th hole" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: Golf.com / Brian Walters Photography · Holes 16, 15 & 9</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">Week 1 starts here. ⛳
+
+Belvedere Golf Club — Charlevoix, Michigan. Opened in 1927, designed by Scottish master William Watson on a narrow strip of land nestled between Lake Michigan and Lake Charlevoix.
+
+Often called the best course you've never heard of, Belvedere is a study in timeless design: dramatic green complexes, a ridge that winds through the property, and a set of par-3s that demand your full attention from the first tee.
+
+Our opening session puts Team CAP against Team CUP in the classic Ryder Cup format — <strong>Best Ball</strong> — where each pair plays their best ball score against the other pair. Find your partner. Pick your spots.
+
+The journey begins. 🏔️</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BAY HARBOR -->
+<div class="post-card" id="bayharbor">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 02 · August 8</div>
+        <h3>Bay Harbor Golf Club</h3>
+      </div>
+      <div class="post-tag">High & Low · Barracas Cup Leg 1</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/f9850e38906dd500d926cdc46356d68205a94bf4-5000x3500.jpg?w=1200&q=80&fit=min&auto=format" alt="Bay Harbor Links 7" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/9ad4229a686e95efe73b0e05721b4318c84ebf0d-5000x3500.jpg?w=800&q=80&fit=min&auto=format" alt="Bay Harbor Quarry" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/lffh1pcz/bay-harbor-golf-club/8869ea83d96682da4d477f339825b57f2f638008-5000x3500.jpg?w=800&q=80&fit=min&auto=format" alt="Bay Harbor Preserve" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: bayharborgolf.com · Links #7 aerial, Quarry holes, Preserve</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">27 holes. One legendary day. 🌊
+
+Bay Harbor Golf Club — Bay Harbor, Michigan. Arthur Hills took a decommissioned shale quarry on the shores of Lake Michigan and transformed it into one of the most dramatic golf experiences in the country. 40-foot gorges, stone cliffs, a waterfall, and panoramic lake views at every turn.
+
+Our longest day covers all three nines:
+
+🏌️ <strong>High & Low (18 holes)</strong> — Links + Quarry: the highest and lowest handicaps paired together, where windswept dunes meet the rugged beauty of the old quarry.
+
+🏆 <strong>Barracas Cup — Leg 1</strong> — Individual net stroke play on the Preserve 9. Your score here sets the standings for Leg 2. Play with purpose.
+
+Often called the "Pebble Beach of the Midwest." On this day, we'll believe it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTHUR HILLS -->
+<div class="post-card" id="arthurhills">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 03 · August 9</div>
+        <h3>Arthur Hills at The Highlands</h3>
+      </div>
+      <div class="post-tag">Ryder Cup — Individuals</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/cded503c3d59410bf3b80becd24b70eee43a18f0-1500x979.jpg?w=1200&q=80&fit=min&auto=format" alt="Arthur Hills 13th hole" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/640236e20c51e893b7df50e30933668a95635e55-5000x3500.jpg?w=800&q=80&fit=min&auto=format" alt="Arthur Hills 4" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/187664eb4c817cc082fe34efff2eccf5e7ceebf7-1600x900.jpg?w=800&q=80&fit=min&auto=format" alt="Arthur Hills 5" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: highlandsharborsprings.com · Hole #13, holes #4 & #5</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">Every man for himself. 🎯
+
+Arthur Hills at The Highlands — Harbor Springs, Michigan. TheGrint Top 100 · #97. Par 73 · 6,352 yards from the Orange tees.
+
+Ranked among the finest courses in Michigan, this Arthur Hills masterpiece winds through deep pine forests, wetlands, and dramatic elevation changes that will test every club in the bag.
+
+The 13th hole — BOYNE Golf's Everest — plays downhill from the top of a ski slope. The fairway is wide enough to land a plane. The view is something else entirely.
+
+Our third Ryder Cup session is all <strong>Individual match play</strong>. Six singles matches, six points on the board. This is where reputations are made.
+
+Handle your business. 🤝</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOON BRAE -->
+<div class="post-card" id="doonbrae">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 04 · August 9 (Evening)</div>
+        <h3>Doon Brae at The Highlands</h3>
+      </div>
+      <div class="post-tag">Barracas Cup — Leg 2</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://cdn.sanity.io/images/ud45da4u/the-highlands/5980a86c9df371c8a3434d6947313fedb986d994-2500x1406.jpg?w=1200&q=80&fit=min&auto=format" alt="Doon Brae drone sunrise" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/ud45da4u/the-highlands/c9d7b2d3bb60243152887b55f7370d87623d7b5e-2500x1307.jpg?w=800&q=80&fit=min&auto=format" alt="Doon Brae at night" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/ud45da4u/the-highlands/fd6bdc8e04971cc69cd468ada2f5209a070cf913-2500x1736.jpg?w=800&q=80&fit=min&auto=format" alt="Doon Brae hole 2" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: highlandsharborsprings.com · Drone shots of Doon Brae</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box no-pre">
+          <p style="font-size:14px;font-style:italic;color:var(--grint-blue-dark);margin-bottom:12px;">A short round inspired by the classics.</p>
+
+          <p style="font-family:'Arial',sans-serif;font-size:13px;line-height:1.75;margin-bottom:10px;">Doon Brae Short Course at The Highlands — Harbor Springs, Michigan. Nine par-3 holes designed by Raymond Hearn, set along the hillside that doubles as a ski slope in winter. <em>Doon</em> means going down into a valley; <em>Brae</em> means hillside in Scotland — an apt name for a course routed along the slope.</p>
+
+          <div class="table-wrap"><table style="width:100%;font-family:'Arial',sans-serif;font-size:11.5px;border-collapse:collapse;margin-bottom:12px;">
+            <thead>
+              <tr style="background:var(--grint-blue-light);">
+                <th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--grint-blue-dark);">Hole</th>
+                <th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--grint-blue-dark);">Inspired By</th>
+                <th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--grint-blue-dark);">Original Course</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">1</td><td style="padding:6px 10px;">Eden</td><td style="padding:6px 10px;color:var(--gray);">Old Course at St. Andrews</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">2</td><td style="padding:6px 10px;">Punch Bowl</td><td style="padding:6px 10px;color:var(--gray);">Royal Cinque Ports (Deal Links)</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">3</td><td style="padding:6px 10px;">Short</td><td style="padding:6px 10px;color:var(--gray);">The National Golf Links</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">4</td><td style="padding:6px 10px;">Redan</td><td style="padding:6px 10px;color:var(--gray);">North Berwick Golf Club</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">5</td><td style="padding:6px 10px;">Reverse Redan</td><td style="padding:6px 10px;color:var(--gray);">Country Club of Charleston</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">6</td><td style="padding:6px 10px;">Whinny Brae</td><td style="padding:6px 10px;color:var(--gray);">Royal Dornoch Golf Club</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">7</td><td style="padding:6px 10px;">Steep</td><td style="padding:6px 10px;color:var(--gray);">Royal County Down</td></tr>
+              <tr style="border-bottom:1px solid #edf0f8;"><td style="padding:6px 10px;">8</td><td style="padding:6px 10px;">Postage Stamp</td><td style="padding:6px 10px;color:var(--gray);">Royal Troon Golf Club Old Course</td></tr>
+              <tr><td style="padding:6px 10px;">9</td><td style="padding:6px 10px;">Biarritz</td><td style="padding:6px 10px;color:var(--gray);">Chicago Golf Club</td></tr>
+            </tbody>
+          </table></div>
+
+          <div class="info-bar">
+            <strong>Barracas Cup — Leg 2</strong><br>
+            After Leg 1 set the standings, pairings draw: 1st with 12th · 2nd with 11th · down to 6th with 7th. Format: <strong>Best Ball Net by pairs</strong>. The winning pair picks their room at the Airbnb. The losers sleep in the Barracas beds. 🛏️
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE HEATHER -->
+<div class="post-card" id="heather">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 05 · August 10</div>
+        <h3>The Heather at The Highlands</h3>
+      </div>
+      <div class="post-tag">Ryder Cup — Best Ball</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://cdn.sanity.io/images/ud45da4u/the-highlands/6ab6ceae67a2504d18c239d5f4453481b1e0257c-2500x1667.jpg?w=1200&q=80&fit=min&auto=format" alt="The Heather hero" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/fb2b3ef3e87abcc6192136a3eb081640592a2f41-5000x3500.jpg?w=800&q=80&fit=min&auto=format" alt="Heather 18" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://cdn.sanity.io/images/5wbxmhco/boyne-resorts-global-content/dcf8951f3799e393405efb8874a4b8d0e727c545-5000x3500.jpg?w=800&q=80&fit=min&auto=format" alt="Heather 5" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: highlandsharborsprings.com · Heather course holes 18 & 5</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">The legend. ⛳
+
+The Heather at The Highlands — Harbor Springs, Michigan. Designed by Robert Trent Jones Sr. in 1966, the very first BOYNE Golf course is still one of the finest championship layouts in the United States.
+
+2018 Michigan Course of the Year. 2019 National Course of the Year. The pedigree speaks for itself.
+
+The Heather winds through classic Northern Michigan evergreens and doglegs before finishing with one of the game's great closing holes — a long par-4 over water that will test your nerve right when you need it most.
+
+Our fourth Ryder Cup session plays <strong>Best Ball</strong>. Three two-man partnerships per side, each match worth one point. Momentum swings here. Read your partner.
+
+Par is your friend. Bogey is a gift. 🌲</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARCADIA SOUTH -->
+<div class="post-card" id="arcadiasouth">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 06 · August 11</div>
+        <h3>Arcadia Bluffs — The South Course</h3>
+      </div>
+      <div class="post-tag">Ryder Cup — Scramble · Polla</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://arcadiabluffs.com/uploads/general/_1200x630_crop_center-center_82_none/Arcadia919-1000.jpg" alt="Arcadia South aerial" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://arcadiabluffs.com/imager/general/1580/Arcadia919-1000_ec36e5deb6d5146de119b8e32c9438f5.jpg" alt="Arcadia South" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://arcadiabluffs.com/imager/general/1071/Arcadia919-1707_ec36e5deb6d5146de119b8e32c9438f5.jpg" alt="Arcadia South hole" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: arcadiabluffs.com · South Course · TheGrint Top 100 #73</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">Complexity veiled by simplicity. 🤍
+
+The South Course at Arcadia Bluffs — Bear Lake, Michigan. TheGrint Top 100 · #73. White tees · Par 72 · 6,380 yards.
+
+Inspired by the golden age classics — no trees, wide fairways, firm and fast, and greens averaging over 9,400 square feet. The wind is always a factor. The strategy is never obvious.
+
+Our fifth Ryder Cup session brings the <strong>Scramble format</strong> — four players, best drive, all play from there. Big hitters rejoice. Short game decides it.
+
+And the <strong>Polla</strong> tees off here too: a $20 buy-in individual net stroke play side bet. Lowest net takes the pot. 12 players. $240. One winner.
+
+A day of decisions — out on one of the best young courses in America. 😏</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARCADIA BLUFFS -->
+<div class="post-card" id="arcadiabluffs">
+  <div class="post-inner">
+    <div class="post-header">
+      <div>
+        <div class="post-number">Venue 07 · August 12–13</div>
+        <h3>Arcadia Bluffs — The Bluffs Course</h3>
+      </div>
+      <div class="post-tag">Ryder Cup Finals — Individuals · Polla</div>
+    </div>
+    <div class="post-body">
+      <div class="photos-section">
+        <div class="photos-label">📸 Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item wide">
+            <img src="https://arcadiabluffs.com/imager/general/334/2-3ArcadiaBluffs-7_10-359_H14_ec36e5deb6d5146de119b8e32c9438f5.jpg" alt="Arcadia Bluffs hero" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://arcadiabluffs.com/imager/general/334/2-3ArcadiaBluffs-7_10-359_H14_ec36e5deb6d5146de119b8e32c9438f5.jpg" alt="Bluffs hole 14" onerror="this.style.background='#dde3f0'">
+          </div>
+          <div class="photo-item">
+            <img src="https://arcadiabluffs.com/imager/general/625/Arcadia_717-402_ec36e5deb6d5146de119b8e32c9438f5.jpg" alt="Arcadia Bluffs hole" onerror="this.style.background='#dde3f0'">
+          </div>
+        </div>
+        <div class="photo-caption">Source: arcadiabluffs.com · The Bluffs Course · TheGrint Top 100 #12</div>
+      </div>
+      <div class="caption-section">
+        <div class="caption-box">The Final Stand. 🏆
+
+Arcadia Bluffs — Arcadia, Michigan. TheGrint Top 100 · #12. White tees · Par 72 · 6,389 yards.
+
+Wind-swept native grasses. Sod-walled bunkers. Panoramic views of Lake Michigan from every hole on the property. Some of the most dramatic golf real estate in the United States.
+
+This is the final Ryder Cup session: <strong>Individual match play — The Finals</strong>. Six singles matches. Six points. The Cup is decided here.
+
+12.5 points wins. A draw means the Cup stays with Team CAP — the defending champions. Team CUP came to take it home.
+
+The <strong>second Polla</strong> runs alongside: 12 players, $20 each, $240 pot. Individual net stroke play. Best ball on the best course of the week.
+
+And on August 13 morning, the Bluffs Course hosts the <strong>Polla Long</strong> at 7:58am — the last competitive round of the trip, before the Champions Dinner.
+
+The Cup awaits. ⚔️</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>All In Golf Trip 2026 — Official Trip Guidebook</strong></p>
+  <p style="margin-top:6px;">Northern Michigan · August 7–13 · 12 Players · 9 Rounds · 8 Courses</p>
+  <p style="margin-top:6px; color:#aaa;">TheGrint · 2026</p>
+</footer>
+
+</body>
+</html>
